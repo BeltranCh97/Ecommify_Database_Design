@@ -1,0 +1,13 @@
+-- Obtiene el top 10 de categorías con mayor cantidad de unidades vendidas
+SELECT 
+    PR.PRODUCT_CATEGORY_NAME AS categoria,
+    COUNT(OI.ORDER_ITEM_ID) AS unidades_vendidas,
+    SUM(OI.PRICE) AS ingresos_por_categoria
+FROM ORDER_ITEMS OI
+JOIN PRODUCTS PR ON OI.PRODUCT_ID = PR.PRODUCT_ID
+JOIN ORDERS O ON OI.ORDER_ID = O.ORDER_ID
+WHERE O.ORDER_STATUS = 'delivered'
+  AND PR.PRODUCT_CATEGORY_NAME IS NOT NULL
+GROUP BY PR.PRODUCT_CATEGORY_NAME
+ORDER BY unidades_vendidas DESC
+LIMIT 10;
