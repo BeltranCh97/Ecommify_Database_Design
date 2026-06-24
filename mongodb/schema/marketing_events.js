@@ -3,6 +3,7 @@ db.createCollection("marketing_events", {
       $jsonSchema: {
          bsonType: "object",
          description: "Esquema para eventos de marketing",
+         required: ["event_id", "customer_id", "event_type", "event_timestamp"],
          properties: {
             _id: { bsonType: "string" },
             event_id: { bsonType: "string" },

@@ -10,6 +10,8 @@ DROP TABLE IF EXISTS ORDERS;
 DROP TABLE IF EXISTS PRODUCTS;
 DROP TABLE IF EXISTS CUSTOMERS;
 
+USE ECOMMIFY;
+
 -- ==========================================
 -- 2. CREACIÓN DE TABLAS MAESTRAS (Sin dependencias)
 -- ==========================================
